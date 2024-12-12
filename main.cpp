@@ -179,12 +179,9 @@ int main(int argc, char **argv) {
     if (isBlinking) {
       stop_recording(w, nullptr);
       stop_blinking();
-    }
-    if (btn->value()) {
+    } else {
       start_recording(w, nullptr);
       start_blinking();
-    } else {
-      return;
     }
     btn->redraw();
     Fl::flush();
